@@ -13,78 +13,224 @@
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <!-- Navigation -->
   <header class="site-header">
     <nav class="nav-bar" aria-label="Primary">
 
-      <a class="brand" href="index.html" data-page="index.html" aria-label="EnergyHub home">
+      <a
+        class="brand"
+        href="index.html"
+        data-page="index.html"
+        aria-label="EnergyHub home"
+      >
         <img src="logo.png" alt="EnergyHub logo">
         <span class="brand-name">EnergyHub</span>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
         <span class="visually-hidden">Toggle menu</span>
         <span></span>
       </button>
 
       <ul class="nav-links" id="primary-nav">
-        <li><a href="index.html" data-page="index.html">Home</a></li>
-        <li><a href="televisions.html" data-page="televisions.html">Televisions</a></li>
-        <li><a href="about.html" data-page="about.html">About Us</a></li>
+        <li>
+          <a href="index.html" data-page="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="televisions.html" data-page="televisions.html">
+            Televisions
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html" data-page="about.html">About Us</a>
+        </li>
       </ul>
 
     </nav>
   </header>
 
+
   <main id="main-content">
 
+    <!-- Hero Section -->
     <section class="hero">
+
       <span class="eyebrow-tag">The Project</span>
-      <h1>About This Site</h1>
+
+      <h1>About EnergyHub</h1>
 
       <p class="lede">
-        EnergyHub is an educational website that shares information about
-        television energy consumption and energy efficiency in Australia.
+        EnergyHub is an educational website that shares simple information
+        about television energy consumption and energy efficiency in Australia.
       </p>
+
     </section>
 
-    <section aria-labelledby="about-heading">
-      <h2 id="about-heading">About the Website</h2>
 
-      <p>
-        EnergyHub was created as a learning project to practise HTML, CSS,
-        and JavaScript while exploring appliance energy efficiency in Australia.
-        The website presents data insights about television technology,
-        screen size, brands, star ratings, and power consumption.
-      </p>
-    </section>
+    <!-- About Section -->
+    <section
+      class="section-card"
+      aria-labelledby="about-heading"
+    >
 
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Get in Touch</h2>
+      <div class="section-header">
+
+        <span class="eyebrow-tag">About EnergyHub</span>
+
+        <h2 id="about-heading">What Is EnergyHub?</h2>
+
+        <p>
+          EnergyHub was created as a learning project to practise HTML, CSS
+          and JavaScript while exploring appliance energy efficiency in
+          Australia.
+        </p>
+
+      </div>
 
       <div class="contact-card">
+
         <p>
-          Have a question or feedback about EnergyHub?
-          Feel free to contact us by email.
+          The website presents data insights about television technology,
+          screen size, brands, star ratings and power consumption. The
+          information is presented through simple visuals and explanations
+          to make the data easier to understand.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Project Purpose Section -->
+    <section
+      class="section-card"
+      aria-labelledby="purpose-heading"
+    >
+
+      <div class="section-header">
+
+        <span class="eyebrow-tag">Our Purpose</span>
+
+        <h2 id="purpose-heading">Why EnergyHub?</h2>
+
+        <p>
+          EnergyHub aims to make television energy information easier to
+          explore and understand.
+        </p>
+
+      </div>
+
+      <div class="audience-grid">
+
+        <!-- Purpose 1 -->
+        <div class="audience-card">
+
+          <div class="audience-icon">💻</div>
+
+          <h3>Web Development</h3>
+
+          <p>
+            Practise HTML, CSS and JavaScript through a real website project.
+          </p>
+
+        </div>
+
+
+        <!-- Purpose 2 -->
+        <div class="audience-card">
+
+          <div class="audience-icon">📊</div>
+
+          <h3>Data Exploration</h3>
+
+          <p>
+            Explore patterns in television technology, size, brands and power use.
+          </p>
+
+        </div>
+
+
+        <!-- Purpose 3 -->
+        <div class="audience-card">
+
+          <div class="audience-icon">💡</div>
+
+          <h3>Easy Information</h3>
+
+          <p>
+            Present energy-related findings in a simple and visual way.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section
+      class="section-card"
+      aria-labelledby="contact-heading"
+    >
+
+      <div class="section-header">
+
+        <span class="eyebrow-tag">Contact</span>
+
+        <h2 id="contact-heading">Get in Touch</h2>
+
+        <p>
+          Have a question or feedback about EnergyHub? Feel free to contact us.
+        </p>
+
+      </div>
+
+      <div class="contact-card">
+
+        <p>
+          You can reach us by email at:
         </p>
 
         <p>
-          <a href="mailto:energyhub@gmail.com">energyhub@gmail.com</a>
+          <a href="mailto:energyhub@gmail.com">
+            energyhub@gmail.com
+          </a>
         </p>
+
       </div>
+
     </section>
 
   </main>
 
+
+  <!-- Footer -->
   <footer class="site-footer">
+
     <div class="footer-inner">
-      <p>&copy; <span id="current-year">2026</span> Aisyah Salsabila</p>
-      <p>Content and code assisted by Claude (Anthropic) generative AI.</p>
+
+      <p>
+        &copy; <span id="current-year">2026</span> Aisyah Salsabila
+      </p>
+
+      <p>
+        Built as a coursework activity · GenAI was used to help write this code
+      </p>
+
     </div>
+
   </footer>
+
 
   <script src="script.js"></script>
 
 </body>
 </html>
-
 
