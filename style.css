@@ -1,21 +1,39 @@
 /* =========================================================
    EnergyHub — stylesheet
-   Palette sampled directly from logo.png:
-     gold  #F8E8A5   brown #7D6744   orange #EBA746
+   Soft logo-matching palette:
+     soft cream #FFF9E9
+     light gold #F8E8A5
+     brown     #7D6744
+     orange    #EBA746
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
+
+/* =========================================================
+   ROOT VARIABLES
+   ========================================================= */
+
 :root {
   --gold:        #F8E8A5;
-  --gold-soft:   #FBF3D6;
+  --gold-soft:   #FFF9E9;
+  --gold-pale:   #FFFCF4;
   --gold-deep:   #EAD588;
+
   --brown:       #7D6744;
-  --brown-text:  #4E3F29;
+  --brown-text:  #5B4A32;
   --brown-deep:  #362A19;
+
   --orange:      #EBA746;
+  --orange-soft: #FFF0D2;
   --orange-deep: #C9812A;
+
   --white:       #FFFFFF;
+
+  --border:      #F0E3BE;
+
+  --shadow:      0 8px 24px rgba(125, 103, 68, 0.08);
+  --shadow-soft: 0 4px 14px rgba(125, 103, 68, 0.06);
 
   --font-head: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -23,9 +41,18 @@
   --max-width: 960px;
 }
 
-* { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -35,32 +62,56 @@ body {
   line-height: 1.6;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-head);
   color: var(--brown-deep);
   line-height: 1.2;
   margin-top: 0;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
-h2 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); margin-bottom: 0.6em; }
-h3 { font-size: 1.15rem; }
+h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
 
-p { max-width: 68ch; }
+h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  margin-bottom: 0.6em;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  max-width: 68ch;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
 .visually-hidden {
   position: absolute;
-  width: 1px; height: 1px;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
 
-/* ---------- Skip link (accessibility) ---------- */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -71,18 +122,24 @@ p { max-width: 68ch; }
   z-index: 200;
   font-weight: 600;
 }
+
 .skip-link:focus {
   left: 0.5em;
   top: 0.5em;
 }
 
-/* ---------- Top navigation ---------- */
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--gold-soft);
-  border-bottom: 3px solid var(--brown);
+  background: rgba(255, 249, 233, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--gold-deep);
 }
 
 .nav-bar {
@@ -134,13 +191,15 @@ p { max-width: 68ch; }
   font-weight: 500;
   color: var(--brown-text);
   border-bottom: 3px solid transparent;
-  transition: color 0.18s ease, border-color 0.18s ease;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
   color: var(--orange-deep);
-  border-color: var(--gold-deep);
+  border-color: var(--orange);
 }
 
 .nav-links a[aria-current="page"] {
@@ -149,11 +208,16 @@ p { max-width: 68ch; }
   font-weight: 600;
 }
 
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
 .nav-toggle {
   display: none;
-  background: none;
-  border: 2px solid var(--brown);
-  border-radius: 6px;
+  background: var(--white);
+  border: 2px solid var(--gold-deep);
+  border-radius: 12px;
   width: 42px;
   height: 38px;
   cursor: pointer;
@@ -172,11 +236,23 @@ p { max-width: 68ch; }
   position: relative;
   transition: transform 0.2s ease;
 }
-.nav-toggle span::before { position: absolute; top: -6px; }
-.nav-toggle span::after  { position: absolute; top: 6px; }
+
+.nav-toggle span::before {
+  position: absolute;
+  top: -6px;
+}
+
+.nav-toggle span::after {
+  position: absolute;
+  top: 6px;
+}
 
 @media (max-width: 640px) {
-  .nav-toggle { display: flex; }
+
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-links {
     position: absolute;
     top: 100%;
@@ -184,21 +260,36 @@ p { max-width: 68ch; }
     right: 0;
     flex-direction: column;
     background: var(--gold-soft);
-    border-bottom: 3px solid var(--brown);
+    border-bottom: 2px solid var(--gold-deep);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.25s ease;
   }
-  .nav-links.open { max-height: 320px; }
-  .nav-links a { border-bottom: 1px solid var(--gold-deep); border-left: 3px solid transparent; }
-  .nav-links a[aria-current="page"] { border-left-color: var(--orange); border-bottom-color: var(--gold-deep); }
+
+  .nav-links.open {
+    max-height: 320px;
+  }
+
+  .nav-links a {
+    border-bottom: 1px solid var(--gold-deep);
+    border-left: 3px solid transparent;
+  }
+
+  .nav-links a[aria-current="page"] {
+    border-left-color: var(--orange);
+    border-bottom-color: var(--gold-deep);
+  }
 }
 
-/* ---------- Hero ---------- */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3em 1.25em 2em;
+  padding: 3.5em 1.25em 2.5em;
   position: relative;
 }
 
@@ -210,35 +301,59 @@ p { max-width: 68ch; }
   width: 120px;
   height: 120px;
   background: var(--gold);
-  clip-path: polygon(55% 0%, 30% 45%, 52% 45%, 40% 100%, 78% 40%, 54% 40%);
-  opacity: 0.6;
+  clip-path: polygon(
+    55% 0%,
+    30% 45%,
+    52% 45%,
+    40% 100%,
+    78% 40%,
+    54% 40%
+  );
+  opacity: 0.45;
   z-index: -1;
 }
 
-.eyebrow-tag {
-  display: inline-block;
-  background: var(--orange);
-  color: var(--brown-deep);
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.25em 0.7em;
-  border-radius: 3px;
-  margin-bottom: 0.8em;
-}
-
 .hero p.lede {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--brown-text);
 }
 
-/* ---------- Sections & cards ---------- */
+
+/* =========================================================
+   EYEBROW TAG
+   ========================================================= */
+
+.eyebrow-tag {
+  display: inline-block;
+  background: var(--orange-soft);
+  color: var(--orange-deep);
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.35em 0.8em;
+  border-radius: 999px;
+  margin-bottom: 0.8em;
+  border: 1px solid #F4D59E;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
 main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.25em 3em;
 }
 
-section + section { margin-top: 2.4em; }
+section + section {
+  margin-top: 2.2em;
+}
+
+
+/* =========================================================
+   GENERAL LISTS
+   ========================================================= */
 
 .facts-list {
   list-style: none;
@@ -252,81 +367,235 @@ section + section { margin-top: 2.4em; }
   background: var(--white);
   border-left: 4px solid var(--orange);
   padding: 0.9em 1.1em;
-  border-radius: 4px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
 }
 
 .tips-list {
   padding-left: 1.2em;
 }
-.tips-list li { margin-bottom: 0.6em; }
+
+.tips-list li {
+  margin-bottom: 0.6em;
+}
 
 .note-box {
-  background: var(--gold);
-  border: 1px dashed var(--brown);
-  border-radius: 6px;
+  background: var(--gold-pale);
+  border: 1px dashed var(--gold-deep);
+  border-radius: 14px;
   padding: 1em 1.2em;
   font-size: 0.95rem;
 }
 
-/* ---------- Data story / chart blocks ---------- */
+
+/* =========================================================
+   MAIN SECTION CARDS
+   ========================================================= */
+
+.section-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.2em;
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2em;
+}
+
+.section-header h2 {
+  margin-bottom: 0.45em;
+}
+
+.section-header p {
+  margin: 0 auto;
+  color: var(--brown-text);
+}
+
+
+/* =========================================================
+   AUDIENCE SECTION
+   ========================================================= */
+
+.audience-section {
+  background: #FFFDF7;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.audience-card {
+  background: var(--gold-pale);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.4em 1.2em;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.audience-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--gold-deep);
+  border-radius: 50%;
+  font-size: 1.7rem;
+}
+
+.audience-card h3 {
+  margin-bottom: 0.45em;
+}
+
+.audience-card p {
+  margin: 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   DATA STORY SECTION
+   ========================================================= */
+
+.data-story-section {
+  background: #FFFDF8;
+}
+
 .chart-grid {
   display: grid;
-  gap: 1.6em;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2em;
 }
 
 .chart-block {
   background: var(--white);
-  border: 1px solid var(--gold-deep);
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
   padding: 1.2em;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chart-block:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
 }
 
 .chart-block h3 {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
-.chart-placeholder {
-  aspect-ratio: 16 / 9;
-  background: repeating-linear-gradient(
-    45deg,
-    var(--gold-soft),
-    var(--gold-soft) 10px,
-    var(--gold) 10px,
-    var(--gold) 20px
-  );
-  border: 2px dashed var(--brown);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--brown-text);
-  font-size: 0.9rem;
-  padding: 1em;
+.chart-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.8em 0;
+  border-radius: 12px;
+  border: 1px solid #F1E8D2;
 }
 
 .chart-caption {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--brown-text);
-  margin-top: 0.7em;
+  margin-top: 0.8em;
   margin-bottom: 0;
+  line-height: 1.6;
 }
 
-/* ---------- Contact / about extras ---------- */
+
+/* =========================================================
+   CONCLUSION
+   ========================================================= */
+
+.conclusion-section {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #FFFDF7 0%,
+    #FFF8E8 100%
+  );
+  border: 1px solid var(--gold-deep);
+}
+
+.conclusion-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--gold-deep);
+  border-radius: 50%;
+  font-size: 1.8rem;
+}
+
+.conclusion-section h2 {
+  margin-bottom: 0.6em;
+}
+
+.conclusion-section p {
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT / ABOUT
+   ========================================================= */
+
 .contact-card {
   background: var(--white);
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 1.2em 1.4em;
   border-left: 4px solid var(--orange);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-card a {
   color: var(--orange-deep);
   font-weight: 600;
 }
-.contact-card a:hover { text-decoration: underline; }
 
-/* ---------- Footer ---------- */
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .site-footer {
   background: var(--brown-deep);
   color: var(--gold-soft);
@@ -344,7 +613,55 @@ section + section { margin-top: 2.4em; }
   font-size: 0.85rem;
 }
 
-.footer-inner p { margin: 0; max-width: none; }
+.footer-inner p {
+  margin: 0;
+  max-width: none;
+}
 
-.site-footer a { color: var(--gold); }
-.site-footer a:hover { text-decoration: underline; }
+.site-footer a {
+  color: var(--gold);
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .section-card {
+    padding: 1.4em;
+    border-radius: 20px;
+  }
+
+  .audience-grid,
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 2.5em;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .section-card {
+    padding: 1.1em;
+  }
+
+  .audience-card {
+    padding: 1.2em 1em;
+  }
+
+  .chart-block {
+    padding: 1em;
+  }
+
+}
