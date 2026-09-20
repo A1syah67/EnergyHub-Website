@@ -16,20 +16,37 @@
   <header class="site-header">
     <nav class="nav-bar" aria-label="Primary">
 
-      <a class="brand" href="index.html" data-page="index.html" aria-label="EnergyHub home">
+      <a
+        class="brand"
+        href="index.html"
+        data-page="index.html"
+        aria-label="EnergyHub home"
+      >
         <img src="logo.png" alt="EnergyHub logo">
         <span class="brand-name">EnergyHub</span>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
         <span class="visually-hidden">Toggle menu</span>
         <span></span>
       </button>
 
       <ul class="nav-links" id="primary-nav">
-        <li><a href="index.html" data-page="index.html">Home</a></li>
-        <li><a href="televisions.html" data-page="televisions.html">Televisions</a></li>
-        <li><a href="about.html" data-page="about.html">About Us</a></li>
+        <li>
+          <a href="index.html" data-page="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="televisions.html" data-page="televisions.html">Televisions</a>
+        </li>
+
+        <li>
+          <a href="about.html" data-page="about.html">About Us</a>
+        </li>
       </ul>
 
     </nav>
@@ -37,9 +54,12 @@
 
   <main id="main-content">
 
+    <!-- Hero Section -->
     <section class="hero">
       <span class="eyebrow-tag">Living room energy</span>
+
       <h1>Television Energy Tips</h1>
+
       <p class="lede">
         Size &amp; technology matter. Larger screens and older technology
         (e.g., plasma) use more energy. Modern LED/LCD and OLED sets are
@@ -47,40 +67,75 @@
       </p>
     </section>
 
-    <section aria-labelledby="tips-heading">
-      <h2 id="tips-heading">Ways to Cut TV Running Costs</h2>
+    <!-- Australian Television Market Section -->
+    <section class="market-intro" aria-labelledby="market-heading">
 
-      <ul class="tips-list">
-        <li>
-          Use the TV's Energy Saver or Eco mode and reduce brightness where comfortable.
-        </li>
-        <li>
-          Disable "always-listening" voice features if you don't use them,
-          as they can add standby power consumption.
-        </li>
-        <li>
-          Consider the star rating and annual kWh on the energy label when purchasing a TV.
-        </li>
-      </ul>
+      <span class="eyebrow-tag">Australian Television Market</span>
 
-    
+      <h2 id="market-heading">Understanding TV Energy Use</h2>
+
+      <p class="market-description">
+        Discover useful information from an Australian Government television
+        energy dataset. Explore different TV technologies, screen sizes,
+        brands and power consumption to help you understand your options.
+      </p>
+
+      <div class="audience-grid">
+
+        <div class="audience-card">
+          <div class="audience-icon">📺</div>
+
+          <h3>TV Buyers</h3>
+
+          <p>
+            People planning to purchase a new television and compare their
+            available options.
+          </p>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">⚡</div>
+
+          <h3>Energy Savers</h3>
+
+          <p>
+            Consumers who want to consider energy use when choosing a TV.
+          </p>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">📊</div>
+
+          <h3>Everyday Users</h3>
+
+          <p>
+            Users who prefer clear visual information and simple explanations
+            instead of technical details.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
+    <!-- Data Story Section -->
     <section aria-labelledby="data-story-heading">
 
-      <h2 id="data-story-heading">TV Energy Insights: Data Story</h2>
+      <span class="eyebrow-tag">Data Story</span>
+
+      <h2 id="data-story-heading">Understanding TV Energy Use</h2>
 
       <p>
-        This section presents findings from the Australian Government's
-        Television Energy Rating dataset. The aim is to help Australian
-        consumers make informed decisions about technology, size, brand,
-        and efficiency.
+        Explore the charts below to discover key findings from an Australian
+        Government dataset on television energy consumption. The data highlights
+        patterns in TV technology, screen size, brands and power use.
       </p>
 
       <div class="chart-grid">
 
         <!-- Chart 1 -->
         <div class="chart-block">
+
           <h3>
             Question 1: What types of TV screen technologies are currently
             available in Australia, and which are the most frequent?
@@ -88,31 +143,19 @@
 
           <img
             src="chart-1.png"
-            alt="Chart 1a: TV screen technologies available in Australia"
+            alt="Chart 1: TV screen technologies available in Australia"
             class="chart-image"
           >
 
           <p class="chart-caption">
-            Screen technologies available: LCD, LCD (LED), and OLED.
+            LCD (LED) is the most frequent technology, followed by LCD and OLED.
           </p>
 
-          <img
-            src="chart-1b.png"
-            alt="Chart 1b: Most frequent TV screen technologies"
-            class="chart-image"
-          >
-
-          <p class="chart-caption">
-            LCD (LED) is the most frequent technology, with 3,923 occurrences,
-            followed by LCD with 500 and OLED with 321. This means LED-backlit
-            LCD screens are the dominant and most common TV technology in this
-            dataset, accounting for roughly 82% of all TVs, while OLED is the
-            least common at about 7%.
-          </p>
         </div>
 
         <!-- Chart 2 -->
         <div class="chart-block">
+
           <h3>
             Question 2: What screen sizes are available, and which are the most frequent?
           </h3>
@@ -124,13 +167,14 @@
           >
 
           <p class="chart-caption">
-            Screen sizes range from 16" to 116", offering a variety of options
-            from compact TVs to extra-large screens.
+            Screen sizes range from 16" to 116", with 24" and 32" being the most common sizes.
           </p>
+
         </div>
 
         <!-- Chart 3 -->
         <div class="chart-block">
+
           <h3>
             Question 3: Which brands have the largest number of models?
           </h3>
@@ -142,13 +186,14 @@
           >
 
           <p class="chart-caption">
-            Kogan has the greatest number of different models, with
-            approximately 800 models.
+            Kogan has the greatest number of different models in the dataset.
           </p>
+
         </div>
 
         <!-- Chart 4 -->
         <div class="chart-block">
+
           <h3>
             Question 4: Which type of screen technology consumes the least amount of power?
           </h3>
@@ -160,13 +205,14 @@
           >
 
           <p class="chart-caption">
-            LCD consumes the least amount of power, with an average power
-            consumption of approximately 85 W.
+            LCD consumes the least amount of power, followed by LCD (LED) and then OLED.
           </p>
+
         </div>
 
         <!-- Chart 5 -->
         <div class="chart-block">
+
           <h3>
             Question 5: What is the relationship between screen size and power use?
           </h3>
@@ -178,15 +224,15 @@
           >
 
           <p class="chart-caption">
-            There is a positive relationship between screen size and power
-            consumption. In general, larger TVs consume more power than
-            smaller TVs. However, power usage varies between models, so the
-            relationship is not perfectly linear.
+            There is a positive relationship between screen size and power use.
+            Larger TVs tend to consume more power.
           </p>
+
         </div>
 
         <!-- Chart 6 -->
         <div class="chart-block">
+
           <h3>
             Question 6: What is the relationship between star rating and screen size?
           </h3>
@@ -198,16 +244,15 @@
           >
 
           <p class="chart-caption">
-            There is no strong relationship between screen size and star rating.
-            Ratings vary across different screen sizes, with most ratings falling
-            between 4 and 7 stars. Larger TVs do not consistently receive higher
-            or lower ratings than smaller TVs. This suggests that screen size
-            alone does not strongly affect the star rating.
+            There is a weak negative relationship between star rating and screen size.
+            This means larger TVs do not always receive higher ratings.
           </p>
+
         </div>
 
         <!-- Chart 7 -->
         <div class="chart-block">
+
           <h3>
             Question 7: Are there differences in power consumption between brands?
           </h3>
@@ -225,40 +270,45 @@
           >
 
           <p class="chart-caption">
-            Power consumption varies between brands. Spark Electronics has the
-            highest average power consumption at approximately 235 W, while
-            Dreame has the lowest among the brands shown at around 145 W.
-            The box plot also shows that some brands, such as Samsung and Kogan,
-            have a wider range of power consumption across their models. This
-            means that power usage can vary significantly both between brands
-            and between models of the same brand.
+            Power consumption varies between brands. Spark Electronics has the highest,
+            while Dreame has the lowest. Some brands also show a wider range between models.
           </p>
-        </div>
 
-        <!-- Question 8 -->
-        <div class="chart-block">
-          <h3>
-            Question 8: What other questions could be investigated with this dataset?
-          </h3>
-
-          <p class="chart-caption">
-            1. Which brand offers the most energy-efficient TV models?
-            <br><br>
-            2. Does TV price increase with screen size?
-            <br><br>
-            3. Which screen technology is the most common?
-          </p>
         </div>
 
       </div>
+
+      <!-- Conclusion Section -->
+      <section class="conclusion" aria-labelledby="conclusion-heading">
+
+        <span class="eyebrow-tag">Conclusion</span>
+
+        <h2 id="conclusion-heading">Making a Smarter TV Choice</h2>
+
+        <p>
+          Choosing a TV involves considering its size, brand and energy use.
+          A 55-inch LED TV is a common choice and can offer a good balance
+          between screen size and energy efficiency.
+        </p>
+
+      </section>
+
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; <span id="current-year">2026</span> Aisyah Salsabila</p>
-      <p>Content and code assisted by Claude (Anthropic) generative AI.</p>
+
+      <p>
+        &copy; <span id="current-year">2026</span> Aisyah Salsabila
+      </p>
+
+      <p>
+        Built as a coursework activity · GenAI was used to help write this code
+      </p>
+
     </div>
   </footer>
 
@@ -266,4 +316,3 @@
 
 </body>
 </html>
-
