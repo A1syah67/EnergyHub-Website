@@ -13,7 +13,6 @@
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-
   <!-- Navigation -->
   <header class="site-header">
     <nav class="nav-bar" aria-label="Primary">
@@ -38,23 +37,9 @@
       </button>
 
       <ul class="nav-links" id="primary-nav">
-
-        <li>
-          <a href="index.html" data-page="index.html">Home</a>
-        </li>
-
-        <li>
-          <a href="televisions.html" data-page="televisions.html">
-            Televisions
-          </a>
-        </li>
-
-        <li>
-          <a href="about.html" data-page="about.html">
-            About Us
-          </a>
-        </li>
-
+        <li><a href="index.html" data-page="index.html">Home</a></li>
+        <li><a href="televisions.html" data-page="televisions.html">Televisions</a></li>
+        <li><a href="about.html" data-page="about.html">About Us</a></li>
       </ul>
 
     </nav>
@@ -65,7 +50,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-
       <span class="eyebrow-tag">Australian Households</span>
 
       <h1>Appliance Energy Use in Australia</h1>
@@ -75,155 +59,15 @@
         in the Australian market and discover ways to make smarter
         energy choices.
       </p>
-
     </section>
 
+    <!-- Content elements -->
+    <section class="chart-section">
+      <h2>Appliance Energy Consumption</h2>
+      <div id="content"></div>
 
-    <!-- Quick Facts Section -->
-    <section
-      class="section-card"
-      aria-labelledby="quick-facts-heading"
-    >
-
-      <div class="section-header">
-
-        <span class="eyebrow-tag">Quick Facts</span>
-
-        <h2 id="quick-facts-heading">Energy Made Simple</h2>
-
-        <p>
-          A few useful things to know when thinking about appliance
-          energy consumption.
-        </p>
-
-      </div>
-
-      <div class="audience-grid">
-
-        <!-- Fact 1 -->
-        <div class="audience-card">
-
-          <div class="audience-icon">⭐</div>
-
-          <h3>Energy Labels</h3>
-
-          <p>
-            Star ratings make it easier to compare appliance efficiency
-            at a glance.
-          </p>
-
-        </div>
-
-
-        <!-- Fact 2 -->
-        <div class="audience-card">
-
-          <div class="audience-icon">🔌</div>
-
-          <h3>Standby Power</h3>
-
-          <p>
-            Devices can still use energy while on standby, so switch
-            them off when they are not needed.
-          </p>
-
-        </div>
-
-
-        <!-- Fact 3 -->
-        <div class="audience-card">
-
-          <div class="audience-icon">💡</div>
-
-          <h3>Save Energy</h3>
-
-          <p>
-            More efficient appliances can help reduce electricity use
-            and running costs.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Explore Section -->
-    <section
-      class="section-card"
-      aria-labelledby="explore-heading"
-    >
-
-      <div class="section-header">
-
-        <span class="eyebrow-tag">Explore EnergyHub</span>
-
-        <h2 id="explore-heading">Explore the Site</h2>
-
-        <p>
-          Learn more about appliance energy use through our different
-          sections.
-        </p>
-
-      </div>
-
-      <div class="audience-grid">
-
-        <!-- Televisions -->
-        <div class="audience-card">
-
-          <div class="audience-icon">📺</div>
-
-          <h3>Televisions</h3>
-
-          <p>
-            Explore TV energy data, screen sizes, technologies, brands
-            and power consumption.
-          </p>
-
-          <p>
-            <a href="televisions.html">Explore Televisions →</a>
-          </p>
-
-        </div>
-
-
-        <!-- About Us -->
-        <div class="audience-card">
-
-          <div class="audience-icon">ℹ️</div>
-
-          <h3>About Us</h3>
-
-          <p>
-            Learn more about the EnergyHub project and how the website
-            was created.
-          </p>
-
-          <p>
-            <a href="about.html">Learn More →</a>
-          </p>
-
-        </div>
-
-
-        <!-- EnergyHub -->
-        <div class="audience-card">
-
-          <div class="audience-icon">⚡</div>
-
-          <h3>EnergyHub</h3>
-
-          <p>
-            Simple and visual information to help users understand
-            appliance energy use.
-          </p>
-
-        </div>
-
-      </div>
-
+      <!-- Container for T04-3 chart -->
+      <div class="responsive-svg-container"></div>
     </section>
 
   </main>
@@ -231,9 +75,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-
     <div class="footer-inner">
-
       <p>
         &copy; <span id="current-year">2026</span> Aisyah Salsabila
       </p>
@@ -241,12 +83,22 @@
       <p>
         Built as a coursework activity · GenAI was used to help write this code
       </p>
-
     </div>
-
   </footer>
 
 
+  <!-- D3 library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- T04-4 loader -->
+  <script src="t04-4-load.js"></script>
+
+  <script src="t04-5-bars.js"></script>
+
+  <!-- Old T04-2 demo (temporarily disabled) -->
+  <!-- <script src="energy-d3.js"></script> -->
+
+  <!-- Site navigation script -->
   <script src="script.js"></script>
 
 </body>
