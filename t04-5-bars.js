@@ -1,0 +1,80 @@
+const createBarChart = (data) => {
+  // --- Sizes (logical vs. display) ---
+  const viewW = 500;
+  const viewH = Math.max(220, data.length * 28);
+  const displayW = 640;
+  const displayH = Math.min(480, data.length * 24 + 40);
+
+  // --- SVG root ---
+  const svg = d3
+    .select(".responsive-svg-container")
+    .append("svg")
+    .attr("viewBox", `0 0 ${viewW} ${viewH}`)
+    .attr("width", displayW)
+    .attr("height", displayH)
+    .style("border", "1px solid #ccc");
+
+  // --- Scales ---
+  const xMax = d3.max(data, (d) => d.count);
+  const xScale = d3
+    .scaleLinear()
+    .domain([0, xMax])
+    .range([0, viewW - 150]); // Leave padding on the right for value text
+
+  const yScale = d3
+    .scaleBand()
+    .domain(data.map((d) => d.brand))
+    .range([0, viewH])
+    .paddingInner(0.2)
+    .paddingOuter(0.1);
+
+  // --- OLD T04-6 RECTANGLE-ONLY BLOCK (COMMENTED OUT) ---
+  /*
+  svg.selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("class", d => `bar bar-${d.count}`)
+    .attr("x", 0)
+    .attr("y", d => yScale(d.brand))
+    .attr("width", d => xScale(d.count))
+    .attr("height", yScale.bandwidth())
+    .attr("fill", "steelblue");
+  */
+
+  // --- T04-7: Group per row (bar + labels move together) ---
+  const labelX = 100; // Alignment boundary between category text and bar start
+
+  const barAndLabel = svg
+    .selectAll("g")
+    .data(data)
+    .join("g")
+    .attr("transform", (d) => `translate(0, ${yScale(d.brand)})`);
+
+  // 1. Bar rectangle inside group
+  barAndLabel
+    .append("rect")
+    .attr("x", labelX)
+    .attr("y", 0)
+    .attr("width", (d) => xScale(d.count))
+    .attr("height", yScale.bandwidth())
+    .style("fill", "steelblue"); // Using .style() to override external CSS conflicts
+
+  // 2. Category text (left of bar, right-aligned at x=100)
+  barAndLabel
+    .append("text")
+    .text((d) => d.brand)
+    .attr("x", labelX)
+    .attr("y", yScale.bandwidth() / 2 + 4) // Centered vertically in bar band
+    .attr("text-anchor", "end")
+    .style("font-family", "sans-serif")
+    .style("font-size", "13px");
+
+  // 3. Value text (at the right edge of each bar)
+  barAndLabel
+    .append("text")
+    .text((d) => d.count)
+    .attr("x", (d) => labelX + xScale(d.count) + 4)
+    .attr("y", yScale.bandwidth() / 2 + 4) // Centered vertically in bar band
+    .style("font-family", "sans-serif")
+    .style("font-size", "13px");
+};
