@@ -98,6 +98,12 @@ p {
   max-width: 68ch;
 }
 
+.responsive-svg-container {
+  background-color: #ffffff;
+  border: 1px solid #e5dcc3;
+  border-radius: 8px;
+  padding: 1rem;
+}
 
 /* =========================================================
    ACCESSIBILITY
